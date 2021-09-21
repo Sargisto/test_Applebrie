@@ -1,0 +1,56 @@
+<h1>User Data</h1>
+
+<div class="data_info">
+    <div class="data_form">
+        <label>User Name</label>
+        <input type="text" [value]='userData.username' disabled>
+
+        <label>Email</label>
+        <input type="text" [value]='userData.email' disabled>
+
+        <label>Phone</label>
+        <input type="text" [value]='userData.phone' disabled>
+
+        <label>Company Name</label>
+        <input type="text" [value]='userData.company.name' disabled>
+
+        <label>Website</label>
+        <input type="text" [value]='userData.website' disabled>
+    </div>
+
+    <div class="data_form">
+        <h3>Adress</h3>
+        <label>City</label>
+        <input type="text" [value]='userData.address.city' disabled>
+
+        <label>Street</label>
+        <input type="text" [value]='userData.address.street' disabled>
+
+        <label>Suite</label>
+        <input type="text" [value]='userData.address.suite' disabled>
+
+        <label>Zipcode</label>
+        <input type="text" [value]='userData.address.zipcode' disabled>
+    </div>
+
+</div>
+
+
+<h2>{{userData.name}}`s Posts</h2>
+<table>
+    <tr>
+        <!-- <th>Id</th>
+        <th>User Id</th> -->
+        <th>Title</th>
+        <th>Body</th>
+    </tr>
+    <tr *ngFor="let item of userData.post">
+        <!-- <td>{{item.id}}</td>
+        <td>{{item.userId}}</td> -->
+        <td>{{item.title}}</td>
+        <td>{{item.body}}</td>
+    </tr>
+
+</table>
+<br>
+<button class="button " [routerLink]="['/user']">Back to Users List</button>
