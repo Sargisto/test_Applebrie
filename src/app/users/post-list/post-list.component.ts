@@ -13,7 +13,6 @@ export class PostListComponent implements OnInit {
 
   ngOnInit(): void {
     this.userData = history.state.data;
-    console.log(this.userData);
   }
 
 }
