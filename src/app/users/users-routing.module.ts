@@ -13,7 +13,7 @@ const routes: Routes = [
     component: UserListComponent,
   },
   {
-    path: "post",
+    path: "post/:id",
     component: PostListComponent,
   },
 ];

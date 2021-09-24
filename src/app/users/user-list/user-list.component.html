@@ -10,7 +10,7 @@
         <th>Phone</th>
         <th>Website</th>
       </tr>
-      <tr *ngFor="let item of userList" class="selected_item" (click)="sendItem(item)">
+      <tr *ngFor="let item of userList" class="selected_item" [routerLink]="['/post', item.id]">
         <td>{{item.username}}</td>
         <td>{{item.email}}</td>
         <td>{{item.phone}}</td>

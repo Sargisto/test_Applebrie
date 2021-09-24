@@ -24,30 +24,13 @@ export class UserListComponent implements OnInit {
   }
 
   getUsers(): void {
-    this.userService.GetUsers().subscribe((response: Array<IUser>) => {
-      this.userList = response;
-      this.getPosts();
-    }, (err) => {
-      console.log(err);
-    });
+    this.userList = this.userService.GetUsers();
+    this.getPosts();
   }
 
   getPosts(): void {
-    this.userService.GetPost().subscribe((response: Array<IPost>) => {
-      this.postList = response;
-      this.userList = this.userList.map(item => {
-        item.post = this.postList.filter(post => post.userId === item.id);
-        return item;
-      });
-
-      setTimeout(() => this.loader = false, 3000);
-    }, (err) => {
-      console.log(err);
-    });
-  }
-
-  sendItem(item: IUser): void {
-    this.router.navigate(['post'], { state: { data: item } });
+    this.postList = this.userService.GetPosts();
+    this.loader = false;
   }
 
 }

@@ -7,7 +7,7 @@ export interface IUser {
     phone: string,
     username: string,
     website: string,
-    post?: Array<IPost>
+    posts?: Array<IPost>
 }
 
 export interface IUserAdress {
